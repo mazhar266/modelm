@@ -78,7 +78,7 @@ fn read_event(device: &mut File) -> Result<InputEvent, io::Error> {
 /// variable if set
 fn open_device() -> Result<File, io::Error> {
     let path = env::var("MODELM_INPUT_DEVICE")
-        .unwrap_or("/dev/input/event0".to_owned());
+        .unwrap_or("/dev/input/by-id/usb-SIGMACHIP_USB_Keyboard-event-kbd".to_owned());
     File::open(path)
 }
 
